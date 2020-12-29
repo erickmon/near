@@ -1,0 +1,28 @@
+<legend>Busqueda</legend>
+
+<form>
+    <div class="mb-3">
+        <input #searchBox id="search-box" (input)="search(searchBox.value)" type="text" class="form-control" placeholder="Ejemplo: Panamá">
+        <div id="textHelp" class="form-text">Puede ingresar el nombre de: provincia, distrito, corregimiento o lugar poblado.</div>
+
+        <table class=" table search-result">
+            <thead>
+              <tr>
+                <th scope="col">Provincia</th>
+                <th scope="col">Districto</th>
+                <th scope="col">corregimiento</th>
+                <th scope="col">Lugar Poblado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let province of data$ | async">
+                <th  scope="row">{{ province.name }}</th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 d-none">Ver Mapa</button>
+</form>
